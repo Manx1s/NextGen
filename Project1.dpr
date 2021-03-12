@@ -14,7 +14,8 @@ uses
   UProductCatalog in 'Model\UProductCatalog.pas',
   UProductDescription in 'Model\UProductDescription.pas',
   USalesLineItem in 'Model\USalesLineItem.pas',
-  UPayment in 'Model\UPayment.pas';
+  UPayment in 'Model\UPayment.pas',
+  UMoney in 'Model\UMoney.pas';
 
 {$R *.res}
 

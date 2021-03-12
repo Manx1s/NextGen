@@ -98,6 +98,7 @@
 			<DCCReference Include="Model\UProductDescription.pas"/>
 			<DCCReference Include="Model\USalesLineItem.pas"/>
 			<DCCReference Include="Model\UPayment.pas"/>
+			<DCCReference Include="Model\UMoney.pas"/>
 			<None Include="ModelSupport_Project1\default.txaPackage"/>
 			<None Include="ModelSupport_Project1\default.txvpck"/>
 			<None Include="ModelSupport_Project1\Unit1\default.txvpck"/>
