@@ -13,7 +13,8 @@ uses
   ULedger in 'Model\ULedger.pas',
   UProductCatalog in 'Model\UProductCatalog.pas',
   UProductDescription in 'Model\UProductDescription.pas',
-  USalesLineItem in 'Model\USalesLineItem.pas';
+  USalesLineItem in 'Model\USalesLineItem.pas',
+  UPayment in 'Model\UPayment.pas';
 
 {$R *.res}
 
