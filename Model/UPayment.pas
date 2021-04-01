@@ -1,15 +1,16 @@
-
 unit UPayment;
 
 interface
-uses  UMoney;
+
+uses UMoney;
+
 type
   Payment = class
   private
-  amount: Money;
+    amount: Money;
   public
-  procedure Payment(cashTendered:Money);
-  function getAmount():Money;
+    procedure Payment(cashTendered: Money);
+    function getAmount(): Money;
   end;
 
 implementation
@@ -18,12 +19,12 @@ implementation
 
 function Payment.getAmount: Money;
 begin
-  result:=amount;
+  result := amount;
 end;
 
 procedure Payment.Payment(cashTendered: Money);
 begin
-  amount:=cashTendered;
+  amount := cashTendered;
 end;
 
 end.

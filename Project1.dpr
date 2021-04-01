@@ -9,7 +9,7 @@ uses
   URegister in 'Model\URegister.pas',
   UCashier in 'Model\UCashier.pas',
   UStore in 'Model\UStore.pas',
-  UItem in 'Model\UItem.pas',
+  UItemID in 'Model\UItemID.pas',
   ULedger in 'Model\ULedger.pas',
   UProductCatalog in 'Model\UProductCatalog.pas',
   UProductDescription in 'Model\UProductDescription.pas',
