@@ -3,23 +3,23 @@ unit USalesLineItem;
 interface
  uses UMoney, UProductDescription;
 type
-  SalesLineItem = class
+  TSalesLineItem = class
   private
   public
-  function getSubTotal():Money;
-  constructor Create(desc:ProductDescription; quantity:integer);
+  function getSubTotal():TMoney;
+  constructor Create(desc:TProductDescription; quantity:integer);
   end;
 
 implementation
 
 { SalesLineItem }
 
-constructor SalesLineItem.Create(desc: ProductDescription; quantity: integer);
+constructor TSalesLineItem.Create(desc: TProductDescription; quantity: integer);
 begin
 
 end;
 
-function SalesLineItem.getSubTotal: Money;
+function TSalesLineItem.getSubTotal: TMoney;
 begin
 
 end;

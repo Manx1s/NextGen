@@ -8,7 +8,6 @@ uses
   UCustomer in 'Model\UCustomer.pas',
   URegister in 'Model\URegister.pas',
   UCashier in 'Model\UCashier.pas',
-  UStore in 'Model\UStore.pas',
   UItemID in 'Model\UItemID.pas',
   ULedger in 'Model\ULedger.pas',
   UProductCatalog in 'Model\UProductCatalog.pas',
@@ -16,7 +15,10 @@ uses
   USalesLineItem in 'Model\USalesLineItem.pas',
   UPayment in 'Model\UPayment.pas',
   UMoney in 'Model\UMoney.pas',
-  UDate in 'Model\UDate.pas';
+  UDate in 'Model\UDate.pas',
+  UStore in 'Model\UStore.pas',
+  UFasad in 'Model\UFasad.pas',
+  Unit2 in 'View\Unit2.pas' {Form2};
 
 {$R *.res}
 
@@ -24,5 +26,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.

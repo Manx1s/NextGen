@@ -3,27 +3,27 @@ unit UMoney;
 interface
 
 type
-  Money = class
+  TMoney = class
   constructor Create(value:integer);
-  procedure add(Value:Money);
-  function minus(Value:Money):Money;
+  procedure add(Value:TMoney);
+  function minus(Value:TMoney):TMoney;
   end;
 
 implementation
 
 { Money }
 
-procedure Money.add(Value: Money);
+procedure TMoney.add(Value: TMoney);
 begin
 
 end;
 
-constructor Money.Create(value: integer);
+constructor TMoney.Create(value: integer);
 begin
 
 end;
 
-function Money.minus(Value: Money): Money;
+function TMoney.minus(Value: TMoney): TMoney;
 begin
 
 end;

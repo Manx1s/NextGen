@@ -1,56 +1,61 @@
 unit USale;
 
 interface
-  uses System.SysUtils, System.Generics.Defaults, System.Generics.Collections, System.Types, UProductDescription, UMoney, USalesLineItem, UDate, UPayment;
+
+uses System.SysUtils, System.Generics.Defaults, System.Generics.Collections,
+  System.Types, UProductDescription, UMoney, USalesLineItem, UDate, UPayment;
+
 type
-  Sale = class
+  TSale = class
   private
-  LineItems:TList <SalesLineItem>;
-  date:Date;
-  isComplete:boolean;
-  payment:Payment;
+    LineItems: TList<TSalesLineItem>;
+    date: TDate;
+    isComplete: boolean;
+    payment: TPayment;
   public
-  function getBalance(): Money;
-  function getTotal(): Money;
-  procedure becomeComplete();
-  procedure makeLineItem(desc:ProductDescription; quantity:integer);
-  procedure makePayment(cashTendered:Money);
+    function getBalance(): TMoney;
+    function getTotal(): TMoney;
+    procedure becomeComplete();
+    procedure makeLineItem(desc: TProductDescription; quantity: integer);
+    procedure makePayment(cashTendered: TMoney);
   end;
 
 implementation
 
 { Sale }
 
-procedure Sale.becomeComplete;
+procedure TSale.becomeComplete;
 begin
-  isComplete:=true;
+  isComplete := true;
 end;
 
-function Sale.getBalance: Money;
+function TSale.getBalance: TMoney;
 begin
-  result:=payment.getAmount().minus(getTotal());
+  result := payment.getAmount().minus(getTotal());
 end;
 
-function Sale.getTotal: Money;
-var total,subtotal:Money; lineItem:SalesLineItem;
+function TSale.getTotal: TMoney;
+var
+  total, subtotal: TMoney;
+  lineItem: TSalesLineItem;
 begin
-  total:=Money.Create(0);
-  subtotal:=Money.Create(0);
-  for LineItem in LineItems do
-    begin
-      subtotal:=lineItem.getSubTotal();
-      total.add(subtotal);
-    end;
+  total := TMoney.Create(0);
+  subtotal := TMoney.Create(0);
+  for lineItem in LineItems do
+  begin
+    subtotal := lineItem.getSubTotal();
+    total.add(subtotal);
+  end;
 end;
 
-procedure Sale.makeLineItem(desc: ProductDescription; quantity: integer);
+procedure TSale.makeLineItem(desc: TProductDescription; quantity: integer);
 begin
- lineitems.Add(salesLineItem.Create(desc, quantity));
+  LineItems.add(TSalesLineItem.Create(desc, quantity));
 end;
 
-procedure Sale.makePayment(cashTendered: Money);
+procedure TSale.makePayment(cashTendered: TMoney);
 begin
-  Payment:=Payment.Create(cashTendered);
+  payment := TPayment.Create(cashTendered);
 end;
 
 end.

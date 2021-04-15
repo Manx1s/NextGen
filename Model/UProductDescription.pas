@@ -1,19 +1,47 @@
 unit UProductDescription;
 
 interface
- uses UItemID, UMoney;
+
+uses UItemID, UMoney;
+
 type
-  ProductDescription = class
-  constructor Create( id:ItemID; price:Money; name:string);
+  TProductDescription = class
+  private
+    id: TItemId;
+    price: TMoney;
+    description: string;
+  public
+    function getId: TItemId;
+    function getPrice: TMoney;
+    function getDescription: string;
+    constructor Create(id: TItemId; price: TMoney; description: string);
   end;
 
 implementation
 
 { ProductDescription }
 
-constructor ProductDescription.Create(id: ItemID; price: Money; name: string);
+constructor TProductDescription.Create(id: TItemId; price: TMoney;
+  description: string);
 begin
+  Self.id := id;
+  Self.price := price;
+  Self.description := description;
+end;
 
+function TProductDescription.getDescription: string;
+begin
+  Result:=description;
+end;
+
+function TProductDescription.getId: TItemId;
+begin
+  Result:=id;
+end;
+
+function TProductDescription.getPrice: TMoney;
+begin
+  Result:=price;
 end;
 
 end.
