@@ -1,7 +1,9 @@
 unit UFasad;
 
 interface
-uses URegister,UStore;
+
+uses URegister, UStore;
+
 type
   IFasad = interface
     procedure getStore();
@@ -27,7 +29,7 @@ end;
 
 procedure TFasad.getStore();
 begin
-   store:=TStore.Create();
+  store := TStore.Create();
 end;
 
 end.

@@ -5,7 +5,7 @@ interface
 type
   TItemID = class
   public
-  constructor Create(id:integer);
+    constructor Create(id: integer);
   end;
 
 implementation

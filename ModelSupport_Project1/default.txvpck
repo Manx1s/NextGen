@@ -40,6 +40,7 @@
       <reference referencedUin="delphi:e_class:src:Project1:USale.@unitclass" />
       <reference referencedUin="delphi:e_class:src:Project1:USale.Sale" />
       <reference referencedUin="delphi:e_class:src:Project1:USale.TSale" />
+      <reference referencedUin="delphi:e_class:src:Project1:USale.ISale" />
     </reference>
     <reference referencedUin="design:view:::w34quu16jbf_v">
       <property name="$shortcutReference" value="true" />
@@ -82,6 +83,7 @@
       <reference referencedUin="delphi:e_class:src:Project1:USalesLineItem.@unitclass" />
       <reference referencedUin="delphi:e_class:src:Project1:USalesLineItem.SalesLineItem" />
       <reference referencedUin="delphi:e_class:src:Project1:USalesLineItem.TSalesLineItem" />
+      <reference referencedUin="delphi:e_class:src:Project1:USalesLineItem.ISalesLineItem" />
     </reference>
     <reference referencedUin="design:view:::5vehgnwpny1v8kaot_v">
       <property name="$shortcutReference" value="true" />
@@ -96,6 +98,7 @@
       <reference referencedUin="delphi:e_class:src:Project1:UMoney.@unitclass" />
       <reference referencedUin="delphi:e_class:src:Project1:UMoney.Money" />
       <reference referencedUin="delphi:e_class:src:Project1:UMoney.TMoney" />
+      <reference referencedUin="delphi:e_class:src:Project1:UMoney.IMoney" />
     </reference>
     <reference referencedUin="design:view:::mw32ece0ybm_v">
       <property name="$shortcutReference" value="true" />
@@ -108,6 +111,7 @@
       <reference referencedUin="delphi:e_class:src:Project1:UProductDescription.@unitclass" />
       <reference referencedUin="delphi:e_class:src:Project1:UProductDescription.ProductDescription" />
       <reference referencedUin="delphi:e_class:src:Project1:UProductDescription.TProductDescription" />
+      <reference referencedUin="delphi:e_class:src:Project1:UProductDescription.IProductDescription" />
     </reference>
     <reference referencedUin="design:view:::isnzxh6sodn_v">
       <property name="$shortcutReference" value="true" />
@@ -121,6 +125,9 @@
       <reference referencedUin="delphi:e_class:src:Project1:UFasad.IFasad" />
       <reference referencedUin="delphi:e_class:src:Project1:UFasad.TFasad" />
       <reference referencedUin="delphi:e_class:src:Project1:UFasad.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::30xo17ud3jjawve5f_v">
+      <property name="$shortcutReference" value="true" />
     </reference>
   </view>
 </nodeSet>

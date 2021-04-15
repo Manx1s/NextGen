@@ -6,18 +6,27 @@ uses System.SysUtils, System.Generics.Defaults, System.Generics.Collections,
   System.Types, UProductDescription, UMoney, USalesLineItem, UDate, UPayment;
 
 type
-  TSale = class
+  ISale = interface
+    function getBalance(): IMoney;
+    function getTotal(): IMoney;
+    procedure becomeComplete();
+    procedure makeLineItem(desc: IProductDescription; quantity: integer);
+    procedure makePayment(cashTendered: IMoney);
+  end;
+
+  TSale = class(TInterfacedObject, ISale)
   private
-    LineItems: TList<TSalesLineItem>;
+    LineItems: TList<ISalesLineItem>;
     date: TDate;
     isComplete: boolean;
-    payment: TPayment;
+    /// <link>aggregation</link>
+    payment: IPayment;
   public
-    function getBalance(): TMoney;
-    function getTotal(): TMoney;
+    function getBalance(): IMoney;
+    function getTotal(): IMoney;
     procedure becomeComplete();
-    procedure makeLineItem(desc: TProductDescription; quantity: integer);
-    procedure makePayment(cashTendered: TMoney);
+    procedure makeLineItem(desc: IProductDescription; quantity: integer);
+    procedure makePayment(cashTendered: IMoney);
   end;
 
 implementation
@@ -29,15 +38,15 @@ begin
   isComplete := true;
 end;
 
-function TSale.getBalance: TMoney;
+function TSale.getBalance: IMoney;
 begin
   result := payment.getAmount().minus(getTotal());
 end;
 
-function TSale.getTotal: TMoney;
+function TSale.getTotal: IMoney;
 var
-  total, subtotal: TMoney;
-  lineItem: TSalesLineItem;
+  total, subtotal: IMoney;
+  lineItem: ISalesLineItem;
 begin
   total := TMoney.Create(0);
   subtotal := TMoney.Create(0);
@@ -48,12 +57,12 @@ begin
   end;
 end;
 
-procedure TSale.makeLineItem(desc: TProductDescription; quantity: integer);
+procedure TSale.makeLineItem(desc: IProductDescription; quantity: integer);
 begin
   LineItems.add(TSalesLineItem.Create(desc, quantity));
 end;
 
-procedure TSale.makePayment(cashTendered: TMoney);
+procedure TSale.makePayment(cashTendered: IMoney);
 begin
   payment := TPayment.Create(cashTendered);
 end;
