@@ -39,7 +39,7 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   fasad := TFasad.Create();
-
+  fasad.getStore;
 end;
 
 end.
