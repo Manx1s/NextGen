@@ -14,8 +14,10 @@ type
 
   TFasad = class(TInterfacedObject, IFasad)
   private
-    Regicter: TRegicter;
-    catalog: TProductCatalog;
+    /// <link>aggregation</link>
+    Regicter: IRegicter;
+    /// <link>aggregation</link>
+    catalog: IProductCatalog;
     /// <link>aggregation</link>
     store: IStore;
   public
